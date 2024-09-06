@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/smart-log.png" type="image/x-icon">
+</head>
+<body>
+    <div class="main-container-login">
+    <div class="auth-container">
+        <div class="auth-form-container">
+            <div class="auth-form" id="login-form">
+                <h2>Login</h2>
+                <form>
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button type="submit"><a href="sensors-info.html"style="text-decoration:none;color:white;">Login</a></button>
+                    <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+                </form>
+            </div>
+            <div class="auth-form" id="signup-form">
+                <h2>Sign Up</h2>
+                <form>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button type="submit"><a href="sensors-info.html"style="text-decoration:none;color:white;">Signup</a></button>
+                    <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('signup-form').style.display = 'none';
+        }
+
+        function showSignup() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+        }
+        
+        // Initialize to show login form by default
+        showLogin();
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Readings</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./images/logo.jpeg" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="images/smart-log.png" type="image/x-icon">
+</head>
+<body>
+
+    <!--Navbar-->
+<!--Navbar-->
+<nav>
+    <div class="navbar-conatiner">
+      <div class="navbar-title">
+          <img src="images/smart-log.png" width="30px" height="30px" alt="" style="border-radius: 50%;">
+        <h1>IrrigaSmart</h1>
+      </div>
+      <div class="navbar-links">
+        <p class="navbar-link"><a href="sensors-info.html">Live Monitoring</a></p>
+        <p class="navbar-link"><a href="npksensor.html">Soil Fertility</a></p>
+        <p class="navbar-link"><a href="disease.html">Crop Diagnostics</a></p>
+        <p class="navbar-link"><a href="community.html">Farmer's Community</a></p>
+  
+        <div id="google_translate_element"></div> 
+        <p class="navbar-link">
+            <a id="notify-btn"><i class="fa-regular fa-bell"></i></a>
+          </p>
+          <p class="navbar-link">
+              <a id="profile-view" href="profile.html"><i class="fa-solid fa-user"></i></a>
+            </p>
+        </div>
+  </nav>
+
+  <!--Notification-->
+
+<div class="cart-main-container">
+    <i class="fa-solid fa-xmark" id="cart-exit"></i>
+    <h1>Notifications</h1>
+    <div class="notify-msg">
+    <div class="notifi-1">
+        <p> Humidity Low.Pump ON.</p>
+        <p>15/03/2024  16:45:34</p>
+    </div>
+    <div class="notifi-1">
+        <p> Humidity Low.Pump OFF.</p>
+        <p>15/03/2024  16:45:34</p>
+    </div>
+    <div class="notifi-1">
+        <p> Humidity Low.Pump ON.</p>
+        <p>15/03/2024  16:45:34</p>
+    </div>
+    <div class="notifi-1">
+        <p> Humidity Low.Pump OFF</p>
+        <p>15/03/2024  16:45:34</p>
+    </div>
+    </div>
+  </div>
+<!--NPK Readings-->
+
+  <div class="sensor-info-container">
+    <div class="sensor-container-box">
+        <div class="moisture">
+            <p>Nitrogen Level</p>
+            <p>320kg/ha</p>
+        </div>
+        <div class="temperature">
+            <p>Phosphorus Level</p>
+            <p>16kg/ha</p>
+        </div>
+        <div class="humidity">
+            <p>Potassium Level</p>
+            <p>150kg/ha</p>
+        </div>
+    </div>
+</div>
+
+<div class="title-text">
+    <center><p>Plant Nutrition Guidance</p></center>
+</div>
+
+<div class="section3-image-gallery">
+    <div class="section3-image">
+        <a href="product-descriptionpage.html">
+        <img src="./images/compost.jpg" alt="" width="250px" height="250px" class="pdt-image" ></a>
+        <div class="img-description">
+            
+            <h3 class="product-title">COMPOST</h3>
+        </div>
+    </div>
+    <div class="section3-image">
+        <a href="product-descriptionpage.html">
+        <img src="./images/fish-emulsion.png" alt="" width="250px" height="250px" class="pdt-image"></a>
+        <div class="img-description">
+        
+            <h3 class="product-title">FISH EMULSION</h3>
+        </div>
+    </div>
+    <div class="section3-image">
+        <a href="product-descriptionpage.html">
+        <img src="./images/green manure.jpg" alt="" width="250px" height="250px" class="pdt-image"></a>
+        <div class="img-description">
+            
+            <h3 class="product-title">GREEN MANURE</h3>
+        </div>
+    </div>
+    <div class="section3-image">
+        <a href="product-descriptionpage.html">
+        <img src="./images/soybean.jpg" alt="" width="250px" height="250px" class="pdt-image"></a>
+        <div class="img-description">
+            
+            <h3 class="product-title">SOYBEAN MEAL</h3>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 IrrigaSmart. All rights reserved.</p>
+    </footer>
+
+
+<script src="script.js"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en'},
+            'google_translate_element'
+        );
+    } 
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+</body>
+</html>

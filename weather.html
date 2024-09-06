@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <style>
+        .weather-body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.weather-wrapper {
+    width: 90%;
+    max-width: 400px;
+    background-color: #222;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    
+    flex-direction: column;
+    
+}
+.weather-wrapper input{
+    max-width: 380px;
+}
+#city {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #222;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+#output {
+    margin-top: 20px;
+}
+
+.weather-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.temperature-display {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.feels-like-display {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.weather-info {
+    font-size: 16px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.weather-info div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.weather-info div:last-child {
+    margin-bottom: 0;
+}
+
+.weather-image {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+    </style>
+    
+    <div class="weather-body">
+        <div class="weather-wrapper">
+            <input type="text" id="city" placeholder="Enter city or allow location">
+            <button id="getWeather">Get Weather</button>
+          
+            <div id="output">
+                <div class="weather-title" id="weather"></div>
+                <img src="images/cloud.svg" id="icon" class="weather-image" alt="Weather Icon" />
+                <div class="temperature-display" id="temperature"></div>
+                <div class="feels-like-display" id="feels-like"></div>
+              
+                <div class="weather-info">
+                    <div>
+                        <span>Humidity: None</span>
+                        <span id="humidity"></span>
+                    </div>
+                    <div>
+                        <span>Wind Speed: None</span>
+                        <span id="wind"></span>
+                    </div>
+                    <div>
+                        <span>Pressure: None</span>
+                        <span id="pressure"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script>
+        const apiKey = "af527d7292e58a1b188954167ce7b7d2";
+
+        $(document).ready(function() {
+            // Get Weather for City
+            $("#getWeather").click(function() {
+                var city = $("#city").val();
+                if (city) {
+                    fetchWeatherByCity(city);
+                }
+            });
+
+            // Get Weather Using Geolocation
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        let lat = position.coords.latitude;
+                        let lon = position.coords.longitude;
+                        fetchWeatherByLocation(lat, lon);
+                    },
+                    function(error) {
+                        console.log("Geolocation error: " + error.message);
+                    }
+                );
+            } else {
+                $("#output").html("Geolocation is not supported by this browser.");
+            }
+
+            // Function to fetch weather by city
+            function fetchWeatherByCity(city) {
+                var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+                getWeatherData(apiUrl);
+            }
+
+            // Function to fetch weather by coordinates
+            function fetchWeatherByLocation(lat, lon) {
+                var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+                getWeatherData(apiUrl);
+            }
+
+            // Function to get weather data from API and display it
+            function getWeatherData(apiUrl) {
+                $.getJSON(apiUrl, function(data) {
+                    var weather = data.weather[0].description;
+                    var temp_c = data.main.temp;
+                    var temp_f = (temp_c * 9/5) + 32;
+                    var feels_like_c = data.main.feels_like;
+                    var feels_like_f = (feels_like_c * 9/5) + 32;
+                    var temp_min_c = data.main.temp_min;
+                    var temp_min_f = (temp_min_c * 9/5) + 32;
+                    var temp_max_c = data.main.temp_max;
+                    var temp_max_f = (temp_max_c * 9/5) + 32;
+                    var humidity = data.main.humidity;
+                    var wind_speed = data.wind.speed;
+                    var wind_deg = data.wind.deg;
+                    var clouds = data.clouds.all;
+                    var pressure = data.main.pressure;
+                    var visibility_m = data.visibility / 1609.34;
+                    var visibility_km = data.visibility / 1000;
+
+                    var wind_dir = getWindDirection(wind_deg);
+
+                    $("#output").html(
+                        `Weather: ${weather}<br>
+                        Temperature: ${temp_c.toFixed(2)}°C / ${temp_f.toFixed(2)}°F<br>
+                        Feels like: ${feels_like_c.toFixed(2)}°C / ${feels_like_f.toFixed(2)}°F<br>
+                        Min Temperature: ${temp_min_c.toFixed(2)}°C / ${temp_min_f.toFixed(2)}°F<br>
+                        Max Temperature: ${temp_max_c.toFixed(2)}°C / ${temp_max_f.toFixed(2)}°F<br>
+                        Humidity: ${humidity}%<br>
+                        Wind Speed: ${wind_speed}m/s<br>
+                        Wind Direction: ${wind_dir} (${wind_deg}°)<br>
+                        Clouds: ${clouds}%<br>
+                        Pressure: ${pressure} hPa<br>
+                        Visibility: ${visibility_km.toFixed(2)} km / ${visibility_m.toFixed(2)} miles`
+                    );
+                });
+            }
+
+            // Function to get wind direction from degrees
+            function getWindDirection(deg) {
+                if (deg > 337.5 || deg <= 22.5) return "N";
+                if (deg > 22.5 && deg <= 67.5) return "NE";
+                if (deg > 67.5 && deg <= 112.5) return "E";
+                if (deg > 112.5 && deg <= 157.5) return "SE";
+                if (deg > 157.5 && deg <= 202.5) return "S";
+                if (deg > 202.5 && deg <= 247.5) return "SW";
+                if (deg > 247.5 && deg <= 292.5) return "W";
+                return "NW";
+            }
+        });
+    </script>
+</body>
+</html>

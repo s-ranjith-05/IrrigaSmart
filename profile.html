@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="shortcut icon" href="./images/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="images/smart-log.png" type="image/x-icon">
+</head>
+<body>
+    <!--Navbar-->
+<nav>
+  <div class="navbar-conatiner">
+    <div class="navbar-title">
+        <img src="images/smart-log.png" width="30px" height="30px" alt="" style="border-radius: 50%;">
+      <h1>IrrigaSmart</h1>
+    </div>
+    <div class="navbar-links">
+      <p class="navbar-link"><a href="sensors-info.html">Live Monitoring</a></p>
+      <p class="navbar-link"><a href="npksensor.html">Soil Fertility</a></p>
+      <p class="navbar-link"><a href="disease.html">Crop Diagnostics</a></p>
+      <p class="navbar-link"><a href="community.html">Farmer's Community</a></p>
+
+      <div id="google_translate_element"></div> 
+      <p class="navbar-link">
+          <a id="notify-btn"><i class="fa-regular fa-bell"></i></a>
+        </p>
+        <p class="navbar-link">
+            <a id="profile-view" href="profile.html"><i class="fa-solid fa-user"></i></a>
+          </p>
+      </div>
+</nav>
+<!--Notification-->
+
+<div class="cart-main-container">
+    <i class="fa-solid fa-xmark" id="cart-exit"></i>
+    <h1>Notifications</h1>
+    <div class="notify-msg">
+    <div class="notifi-1">
+        <p> Humidity Low.Pump ON.</p>
+        <p>15/03/2024  16:45:34</p>
+    </div>
+    <div class="notifi-1">
+        <p> Humidity Low.Pump OFF.</p>
+        <p>15/03/2024  16:45:34</p>
+    </div>
+    <div class="notifi-1">
+        <p> Humidity Low.Pump ON.</p>
+        <p>15/03/2024  16:45:34</p>
+    </div>
+    <div class="notifi-1">
+        <p> Humidity Low.Pump OFF</p>
+        <p>15/03/2024  16:45:34</p>
+    </div>
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <h2>User Profile</h2>
+
+    <!-- Display User Details -->
+    <div id="profileDisplay">
+      <div class="profile-image">
+        <img id="profileImg" src="images/prof.jpeg" alt="Profile Image">
+    </div>
+        <h3>Personal Information</h3>
+        <p><strong>Full Name:</strong> <span id="displayName">John Doe</span></p>
+        <p><strong>Email Address:</strong> <span id="displayEmail">johndoe@example.com</span></p>
+        <p><strong>Password:</strong> <span id="displayPassword">********</span></p>
+
+        <h3>Farm Information</h3>
+        <p><strong>Farm Name:</strong> <span id="displayFarmName">Green Valley Farm</span></p>
+        <p><strong>Farm Location:</strong> <span id="displayFarmLocation">Madurai, India</span></p>
+        <p><strong>Primary Crop:</strong> <span id="displayCropType">Rice</span></p>
+        <p><strong>Farm Size:</strong> <span id="displayFarmSize">15 acres</span></p>
+        <p><strong>Irrigation System:</strong> <span id="displayIrrigationSystem">Drip Irrigation</span></p>
+        <p><strong>Years of Experience:</strong> <span id="displayFarmExperience">10 years</span></p>
+
+        <!-- Update Profile Button -->
+        <button id="updateBtn" class="profile-post-btn">Update Profile</button>
+    </div>
+
+    <!-- Editable Profile Form (Hidden Initially) -->
+    <form id="profileForm" style="display: none;">
+        <h3>Personal Information</h3>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" value="John Doe" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" value="johndoe@example.com" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="password123" required>
+
+        <h3>Farm Information</h3>
+        <label for="farmName">Farm Name:</label>
+        <input type="text" id="farmName" name="farmName" value="Green Valley Farm" required>
+
+        <label for="farmLocation">Farm Location:</label>
+        <input type="text" id="farmLocation" name="farmLocation" value="Madurai, India" required>
+
+        <label for="cropType">Primary Crop:</label>
+        <input type="text" id="cropType" name="cropType" value="Rice" required>
+
+        <label for="farmSize">Farm Size (in acres):</label>
+        <input type="number" id="farmSize" name="farmSize" value="15" required>
+
+        <label for="irrigationSystem">Irrigation System Used:</label>
+        <input type="text" id="irrigationSystem" name="irrigationSystem" value="Drip Irrigation" required>
+
+        <label for="farmExperience">Years of Farming Experience:</label>
+        <input type="number" id="farmExperience" name="farmExperience" value="10" required>
+
+        <!-- Save Changes Button -->
+        <button type="submit" class="profile-post-btn">Save Changes</button>
+        <button id="cancelBtn" class="profile-post-btn">Cancel</button>
+    </form>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2024 IrrigaSmart. All rights reserved.</p>
+</footer>
+
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+              {pageLanguage: 'en'},
+              'google_translate_element'
+          );
+      } 
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

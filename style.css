@@ -1,0 +1,1361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 8px #90ee90, inset 0 0 8px #90ee90; }
+    50% { box-shadow: 0 0 16px #90ee90, inset 0 0 14px #90ee90; }
+    100% { box-shadow: 0 0 8px #90ee90, inset 0 0 8px #90ee90; }
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+:root {
+    --primary-color: #2E8B57; /* Sea Green */
+    --secondary-color: #6B8E23; /* Olive Drab */
+    --accent-color: #FFD700; /* Gold */
+    --background-color: rgba(0, 0, 0, 0.8); /* Dimmed background */
+    --text-color: #F5F5F5; /* Light Grey */
+    --muted-text-color: #B0B0B0; /* Muted Light Grey */
+    --table-header-color: #6B8E23; /* Olive Drab */
+    --table-row-bg-even: #E6E6FA; /* Lavender */
+    --table-row-bg-odd: #F0FFF0; /* Honeydew */
+}
+/*Login/signup*/
+/* Basic Reset */
+
+/* Page Styles */
+.main-container-login {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Authentication Container */
+.auth-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    overflow: hidden;
+    padding-right: 20px; 
+}
+
+/* Authentication Form Container */
+.auth-form-container {
+    padding: 20px;
+    
+}
+
+/* Form Styles */
+.auth-form {
+    display: none; /* Hide all forms by default */
+}
+
+.auth-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form h2 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.auth-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.auth-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50; /* Green button */
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 340px;
+}
+
+.auth-form button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+.auth-form p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.auth-form a {
+    color: #4CAF50; /* Green color for links */
+    text-decoration: none;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+/* Welcome Page */
+.welcome-container {
+    background-image: url(./images/welcome.jpg);
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
+    background-position: top 25% right 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text Container */
+.welcome-text {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background for better readability */
+    padding: 60px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Heading Styles */
+.welcome-text h2 {
+    color: #ffffff; /* White color for contrast */
+    font-size: 2.2em;
+    font-weight: 500;
+    margin: 0;
+}
+
+.welcome-text h1 {
+    color: #ffffff; /* White color for contrast */
+    font-size: 3.0em;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Button Styles */
+.welcome-text button {
+    padding: 15px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green button to match the agricultural theme */
+    color: #ffffff; /* White text */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.welcome-text button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Link Styles */
+.welcome-text a {
+    text-decoration: none;
+    color: #FFD54F; /* Light yellow color for contrast */
+}
+
+.welcome-text a:hover {
+    text-decoration: underline;
+    color: #FFB300; /* Darker yellow on hover */
+}
+
+/*Nav-bar*/
+.navbar-conatiner{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+    
+}
+.navbar-title{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.navbar-search input{
+    width: 250px;
+    padding:5px;
+    border:none;
+    background-color:rgb(200, 196, 196);
+    border-radius: 10px;
+    color: white;
+}
+.navbar-search input:focus{
+    outline:transparent;
+}
+.navbar-search i{
+    color: white;
+    position: relative;
+    right: 25px;
+}
+.navbar-links{
+    display: flex;
+    column-gap: 45px;
+    margin-right: 60px;
+}
+.navbar-link a{
+    text-decoration: none;
+    color: rgb(154, 150, 150);
+    font-weight: 500;
+}
+.navbar-link a:hover{
+    text-decoration: underline;
+    color: #90ee90;
+    transition: 0.5s ease;
+}
+.navbar-conatiner i{
+    font-weight: bolder;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+/* Vertical Navbar*/
+.vertical-navbar-buy{
+    display: none;
+    position: relative;
+    bottom: 5px;
+}
+#hamburger-menu{
+    display: none;
+}
+.vertical-navbar-links{
+    display:flex;
+    flex-direction: column;
+    background-color:rgb(15, 15, 66);
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left:-300px;
+    z-index: 2;
+    display: none;
+    transition: 0.5s ease;
+}
+.vertical-navbar-links i{
+    font-size: 1.8em;
+    color: white;
+    margin-top: 10px;
+    margin-right: 10px;
+    position: absolute;
+    right: 10px;
+}
+.vertical-navbar-link{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.vertical-navbar-links .vertical-navbar-link a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+/*Cart Count*/
+.cart-count{
+    position: relative;
+    bottom: 10px;
+    left: 75px;
+    color:rgb(226, 249, 240);
+    background-color:rgb(2, 203, 76);
+    border-radius: 50%;
+    padding-left: 2px;
+    padding-right: 2px;
+    z-index: 1;
+    font-size: 1.0em;
+}
+.cart-vertical-count{
+    position: relative;
+    left: 15px;
+    top: 5px;
+    color:rgb(226, 249, 240);
+    background-color:rgb(2, 203, 76);
+    border-radius: 50%;
+    z-index: 1;
+    padding-left: 3px;
+    font-size: 0.6em;
+    width: 10px; 
+}
+
+
+/*Community*/
+.shop-blog-header-container{
+    background-image: url(./images/blog-pg-bg.jpg);
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    margin-top: 10px;
+    background-position: top 50% right 0 ;
+}
+.shop-blog-header-container h1{
+    font-size: 3.0em;
+    color: white;
+    padding-top: 200px;
+    font-weight: 600;
+    text-align: center;
+}
+.shop-blog-header-container p{
+    font-size:2.0em;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+.blog-news-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+.blog-news-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.blog-news-container-image{
+    margin-left: 120px;
+}
+.blog-news-container-image img{
+    width: 420px;
+    height: 280px;
+}
+.blog-news-container-image h1{
+    margin-bottom: -25px;
+    color:rgb(230, 225, 225) ;
+    font-size: 3.0em;
+}
+.blog-news-container-text {
+    width: 45%;
+    margin-left: 40px;
+    margin-top: 60px;
+}
+
+.interaction-container {
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+    margin-top: 20px;
+}
+/* Basic styling for the like button */
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #e74c3c; /* Color for the filled heart */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Color for the heart icon when not liked */
+.like-button .fa-heart-o {
+    color: #ccc; /* Light grey for outline heart */
+}
+
+/* Color for the heart icon when liked */
+.like-button.liked .fa-heart-o {
+    color: #e74c3c; /* Red color for filled heart */
+}
+
+/* Background color for the button when liked */
+.like-button.liked {
+    border-radius: 50%; /* Rounded background */
+}
+
+.comment-container {
+    margin-left: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.comment-contianer input{
+    flex: 1; /* Allow the input to take up available space */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 8px; /* Space between input and button */
+}
+.comment-container input:focus{
+    outline: none;
+}
+
+.send-button {
+    background-color: #90ee90;
+    border: none;
+    margin-top:-4px;
+    color: white; /* Icon color */
+    padding: 14px 15px;
+    font-size: 18px; /* Adjust size as needed */
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners for button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.send-button:hover {
+    background-color:#3ff03f;
+}
+
+.send-button i {
+    margin: 0; /* No extra margin for the icon */
+}
+
+/*Sensor-informations*/
+
+.sensor-info-container{
+    margin-top:100px;
+}
+.sensor-container-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.moisture{
+    background-color:transparent;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  box-shadow: 0 0 8px #90ee90, inset 0 0 8px #90ee90;
+  animation: pulse 2s linear 1s infinite;
+}
+.moisture p{
+    position: relative;
+    text-align: center;
+    font-family:sans-serif;
+    font-weight:100;
+    font-size:24px;
+    color: #90ee90;
+    top: 70px;
+    text-shadow: 0 0 4px #90ee90;
+}
+.temperature{
+    background-color:transparent;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  box-shadow: 0 0 8px #90ee90, inset 0 0 8px #90ee90;
+  animation: pulse 2s linear 1s infinite;
+}
+.temperature p{
+    position: relative;
+    text-align: center;
+    font-family:sans-serif;
+    font-weight:100;
+    font-size:24px;
+    color: #90ee90;
+    top: 70px;
+    text-shadow: 0 0 4px #90ee90;
+}
+.humidity{
+    background-color:transparent;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  box-shadow: 0 0 8px #90ee90, inset 0 0 8px #90ee90;
+  animation: pulse 2s linear 1s infinite;
+}
+.humidity p{
+    position: relative;
+    text-align: center;
+    font-family:sans-serif;
+    font-weight:100;
+    font-size:24px;
+    color: #90ee90;
+    top: 70px;
+    text-shadow: 0 0 4px #90ee90;
+}
+
+/*Toggle*/
+
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    position: absolute;
+    right: 30px;
+    margin-top: 30px;
+  }
+  .switch-description {
+    position: relative;
+    right: 100px; /* Adjusts horizontal positioning */
+    top: -2px; /* Adjusts vertical positioning */
+    font-size: 1.6em; /* Adjusts the font size */
+    color: #556b2f; /* DarkOliveGreen for agricultural theme */
+    font-weight: bold; /* Makes the text bold */
+    margin-left: 10px; /* Adds some spacing to the left for better alignment */
+    white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color:#3ee23e;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #3ee23e;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+
+/*History-Title*/
+.title-text {
+    font-size: 1.8em; /* Slightly smaller for a more refined look */
+    margin-top: 80px; /* Adjusted margin for better spacing */
+    color: #4b5320; /* Dark Olive for a muted, professional look */
+    font-weight: 600; /* Semi-bold for a balanced emphasis */
+    text-align: center;
+    text-transform: capitalize; /* Capitalize for a softer, less harsh effect */
+    border-bottom: 2px solid #8b4513; /* Thinner border for subtlety */
+    padding-bottom: 8px; /* Slightly reduced padding */
+    letter-spacing: 1px; /* Add spacing between letters for elegance */
+}
+
+
+
+/*History-Table*/
+table {
+    margin: 10px auto;
+    width: 1250px;
+    border-collapse: collapse;
+    background-color: #f7f7f2; /* Very light greyish-beige background */
+    font-family: Arial, sans-serif; /* A clean, professional font */
+    align-items: center;
+    justify-content: center;
+}
+
+th, td {   
+    padding: 12px; /* Slightly larger padding for better spacing */
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #7d7d7d; /* Muted grey border for a professional look */
+    color: #4b5320; /* Dark Olive for text */
+}
+
+th {
+    background-color: #556b2f; /* DarkOliveGreen for header background */
+    color: #ffffff; /* White text color for headers */
+    font-weight: bold; /* Bold headers */
+    text-transform: uppercase; /* Uppercase for a professional look */
+}
+
+tr:nth-child(even) {
+    background-color: #e5e5e0; /* Light grey for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: #f0f0eb; /* Slightly darker greyish beige for odd rows */
+}
+
+tr:hover {
+    background-color: #dcdcdc; /* Subtle highlight on hover for interactivity */
+}
+
+/*Notification*/
+.cart-main-container{
+    width: 20%;
+    position:fixed  ;
+    top: 0;
+    right:-400px;
+    background-color:rgb(219, 214, 214);
+    height: 100%;
+    z-index:2;
+    transition: 0.5s ease-in;
+}
+.cart-main-container #cart-exit{
+    margin-top: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+
+}
+.cart-main-container h1{
+    text-align: center;
+}
+.notify-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.notifi-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(123, 123, 123);
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+}
+.notifi-1 p{
+    color:white;
+}
+
+
+
+/*Disease*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Root Variables for Colors */
+
+
+/* Disease Section */
+.section3-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-disease {
+    margin-top: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.diseases-block {
+    display: flex;
+    margin: 10px;
+    max-width: 400px;
+    max-height: auto;
+    border: 2px solid var(--primary-color);
+}
+
+.disease-image img {
+    width: 105px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.disease-about {
+    width: 305px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.add-btn {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    display: inline;
+    padding: 5px;
+
+}
+.add-btn a{
+    color: white;
+}
+.add-btn:hover {
+    cursor: pointer;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.pop-up-disease-add {
+    position: absolute;
+    background: #edf3b6; /* Clean white background for a professional look */
+    border: 2px solid var(--primary-color);
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* More subtle shadow for a soft look */
+    height: 550px;
+    width: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: none;
+    transition: all 0.3s ease; /* Smooth transition */
+    padding: 20px; /* More padding for better spacing */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+/* Refined popup image style */
+.disease-popup-img{
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+}
+.disease-popup-img img {
+    
+    height: 200px; 
+    width: 300px;
+   
+
+    border-radius: 8px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+
+.description-disease {
+    margin-top: 20px;
+}
+
+.description-disease h3 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-group textarea {
+    width: calc(100% - 20px);
+    height: 140px;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f9f9f9;   
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+}
+.form-group textarea:focus{
+    outline: none;
+}
+
+.form-group textarea:focus {
+    background-color: #fff; 
+    box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.post-btn {
+    background-color: #4CAF50; /* A professional green color */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1.1em;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 20px auto; 
+}
+
+.post-btn:hover {
+    
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #388E3C; /* A darker green for the hover effect */
+}
+
+/* Close button */
+.close svg {
+    fill: var(--primary-color);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+}
+
+.close svg:hover {
+    fill: var(--accent-color);
+}
+
+h2{
+    margin-left: 150px;
+}
+
+
+/*Profile page*/
+/* Profile Container */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    
+}
+/* Profile Image Container */
+.profile-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Profile Image Styling */
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensure the image fits the container */
+    border: 4px solid #4CAF50; /* Green border related to agriculture */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Change Image Button */
+.profile-image button {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.profile-image button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+/* Hover Effect on Profile Image */
+.profile-image img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+/* File Upload Input for Profile Image (Hidden) */
+#imageUpload {
+    display: none; /* Hidden by default */
+}
+
+/* Style for the visible label that will trigger the file upload */
+#changeImgBtn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#changeImgBtn:hover {
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+/* Headings */
+h2 {
+    margin-left:2px;
+    color: #2e7d32; /* Dark green */
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #388e3c; /* Medium green */
+    border-bottom: 2px solid #388e3c;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Labels and Text */
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+p {
+    font-size: 1em;
+    color: #555;
+    margin: 8px 0;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Buttons */
+.profile-post-btn {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1.1em;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    margin: 20px 10px 0 0;
+}
+
+.post-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+/* Form and Display Visibility */
+#profileForm {
+    display: none;
+}
+
+#profileDisplay {
+    display: block;
+}
+
+/* Profile Display Layout */
+#profileDisplay p {
+    background-color: #E8F5E9; /* Light green background */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Cancel Button */
+#cancelBtn {
+    background-color: #F44336; /* Red button for cancel */
+}
+
+#cancelBtn:hover {
+    background-color: #D32F2F; /* Darker red on hover */
+}
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #1b5e20; /* Slightly darker green border for separation */
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/*NPK*/
+
+.section3-image-gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 30px;  
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+.section3-image-gallery{
+    margin-top: 70px;
+}
+.section3-image{
+    width: 270px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid black;
+    height: fit-content;
+    border-radius: 10px;
+    flex-basis: 20%;
+    margin-top: 10px;
+}
+.section3-image img{
+    background-color:rgb(230, 225, 225) ;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.img-description p{
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-left: 20px;
+    color: rgb(154, 150, 150) ;
+}
+.img-description h3{
+    font-size:1.0em;
+    font-weight: 600;
+    margin-left: 20px;
+    color: rgb(0, 0, 0) ;
+}
+.img-description .sections-star-icon{
+    font-size:0.8em;
+    font-weight: 600;
+    margin-left: 20px;
+    color: gold;
+}
+.img-description h4{
+    font-size:1.2em;
+    font-weight: 600;
+    margin-left: 20px;
+    color:rgb(2, 203, 76)  ;
+}
+.img-description .section3-shop-button{
+    background-color: rgb(226, 249, 240) ;
+    font-size:1.3em;
+    font-weight: 600;
+    color:rgb(2, 203, 76) ;
+    border: none;
+    border-radius: 50%;
+    padding: 7px;
+    text-align: center;
+    position: relative;
+    left: 230px;
+    bottom: 40px;
+    margin-left: none;
+    cursor: pointer;
+}
+.img-description .section3-shop-button:hover{
+    color: rgb(226, 249, 240) ;
+    background-color:rgb(2, 203, 76) ;
+}
+/*Weather*/
+
+.weather-card {
+    width: 190px;
+    height: 120px;
+    background: linear-gradient(135deg, #4a90e2, #50c9c3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    max-width: 350px;
+    max-height: 200px;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.header-section {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 45px;
+}
+
+.header-section svg {
+    width: 60px;
+    height: 60px;
+    fill: #ffffff;
+    margin-right: 10px;
+}
+
+.header-section h2 {
+    font-size: 28px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.info-section {
+    margin-top: 30px;
+}
+
+.temperature-display {
+    font-size: 38px;
+    font-weight: bold;
+    color: #ffeb3b;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+.humidity-display {
+    font-size: 18px;
+    font-weight: 500;
+    bottom: 25px;
+    position: absolute;
+}
+.humidity-display h3{
+    color: rgb(254, 254, 254);
+}
+
+
+.weather-card span {
+    display: block;
+}
+
+.weather-card:before {
+    content: "";
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    left: -250px;
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+.weather-card:after {
+    content: "";
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    bottom: -250px;
+    right: -250px;
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.weather-card * {
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .weather-card {
+        width: 90%;
+    }
+    .temperature-display {
+        font-size: 36px;
+    }
+    .header-section svg {
+        width: 60px;
+        height: 60px;
+    }
+    .header-section h2 {
+        font-size: 22px;
+    }
+}
+
+.sensor-info-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sensor-container-box{
+    justify-content: space-between;
+    width: 60%;
+}
+.weather-a{
+    text-decoration: none;
+}
+/* ---------------------------weather-page-------------------------- */
+.weather-body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.weather-wrapper {
+    width: 90%;
+    max-width: 400px;
+    background-color: #222;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    
+    flex-direction: column;
+    
+}
+.weather-wrapper input{
+    max-width: 380px;
+}
+#city {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #222;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+#output {
+    margin-top: 20px;
+}
+
+.weather-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.temperature-display {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.feels-like-display {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.weather-info {
+    font-size: 16px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.weather-info div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.weather-info div:last-child {
+    margin-bottom: 0;
+}
+
+.weather-image {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+
